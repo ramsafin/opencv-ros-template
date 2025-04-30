@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "catkin: build workspace",
+      "type": "shell",
+      "command": "catkin build --cmake-args -DCMAKE_BUILD_TYPE=${input:buildType} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "detail": "Build workspace"
+    },
+    {
+      "label": "catkin: build package",
+      "type": "shell",
+      "command": "catkin build --this --cmake-args -DCMAKE_BUILD_TYPE=${input:buildType} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "detail": "Build package"
+    },
+    {
+      "label": "catkin: clean workspace",
+      "type": "shell",
+      "command": "catkin clean -y",
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "detail": "Build package"
+    },
+    {
+      "label": "clang-tidy",
+      "type": "shell",
+      "command": "run-clang-tidy -p build || echo 'clang-tidy is not installed' >&2",
+      "problemMatcher": [],
+      "group": "build",
+      "detail": "Run clang-tidy"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "buildType",
+      "type": "pickString",
+      "description": "Build type",
+      "options": [
+        "Debug",
+        "Release",
+        "RelWithDebInfo"
+      ],
+      "default": "RelWithDebInfo"
+    }
+  ]
+}

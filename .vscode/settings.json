@@ -1,0 +1,28 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.rulers": [
+    120
+  ],
+  "files.exclude": {
+    "**/.git": true
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.autoAddFileAssociations": false,
+  "clang-format.style": "file",
+  "clang-format.executable": "/usr/bin/clang-format",
+  "python.autoComplete.extraPaths": [
+    "/opt/ros/noetic/lib/python3/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/ros/noetic/lib/python3/dist-packages"
+  ]
+}
